@@ -2,9 +2,48 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Timer</title>
+		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
-		<h1>Timer</h1>
+		<header>
+			<h1>Countdown Timer</h1>
+		</header>
+
+		<div id="timer-container">
+			<div class="progress-circle">
+				<svg width="200" height="200">
+					<!-- Background Circle -->
+					<circle
+						cx="100"
+						cy="100"
+						r="90"
+						stroke="#e6e6e6"
+						stroke-width="15"
+						fill="none"></circle>
+					<!-- Progress Circle -->
+					<circle
+						id="progress"
+						cx="100"
+						cy="100"
+						r="90"
+						stroke="blue"
+						stroke-width="15"
+						fill="none"
+						stroke-linecap="round"
+						transform="rotate(-90 100 100)"
+						stroke-dasharray="565.48"
+						stroke-dashoffset="565.48"></circle>
+				</svg>
+				<div id="time-display">00:00:00</div>
+			</div>
+
+			<div class="controls">
+				<button id="pauseBtn">Pause</button>
+			</div>
+		</div>
+
+		<script src="js/timer.js"></script>
 	</body>
 </html>
