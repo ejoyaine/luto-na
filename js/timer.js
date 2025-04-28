@@ -34,6 +34,11 @@ function tick() {
 		if (remainingTime <= 0) {
 			clearInterval(timerInterval);
 			document.getElementById('alarmSound').play();
+			// Disable the Pause/Resume button once the timer is up.
+			const pauseBtn = document.getElementById('pauseBtn');
+			pauseBtn.disabled = true;
+			pauseBtn.textContent = 'Timer Up';
+			pauseBtn.style.backgroundColor = 'grey'; // Set disabled button color to grey
 		}
 	}
 }
