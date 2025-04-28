@@ -38,6 +38,18 @@ function tick() {
 	}
 }
 
+document.getElementById('pauseBtn').addEventListener('click', function () {
+	isPaused = !isPaused;
+	this.textContent = isPaused ? 'Resume' : 'Pause';
+});
+
+document.getElementById('returnBtn').addEventListener('click', function () {
+	clearInterval(timerInterval);
+	localStorage.removeItem('timerDuration');
+	localStorage.removeItem('originalDuration');
+	window.location.href = 'index.html';
+});
+
 if (isNaN(remainingTime) || remainingTime <= 0) {
 	alert('Invalid timer duration. Redirecting to the home page.');
 	window.location.href = 'index.html';
